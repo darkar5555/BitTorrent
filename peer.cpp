@@ -17,5 +17,7 @@ int main() {
    
    chunkFile("kimble2008.pdf", "chepiur", 256);
    joinFile("chepiur", "texto");
+   //create_list_peers();
+   //print_list_peers(); 
    return 0;
 }
