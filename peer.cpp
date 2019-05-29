@@ -15,6 +15,7 @@ using namespace std;
 
 int main() {
    
-
+   chunkFile("kimble2008.pdf", "chepiur", 256);
+   joinFile("chepiur", "texto");
    return 0;
 }
