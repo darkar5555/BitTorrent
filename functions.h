@@ -140,3 +140,23 @@ void print_list_peers()
         cout<<ip<<"->"<<file_chunk<<endl;
     }
 }
+
+
+string FirstNumberToString(int n)
+{
+     ostringstream ss;
+     ss << n;
+     return ss.str();
+}
+
+string encode_message(string message)
+{
+    char tmp = message[0];
+    message.erase(0,1);
+    int size_message = message.length();
+    string size_str = FirstNumberToString(size_message);
+    size_str = string(4-size_str.length(),'0').append(size_str);
+    size_str += tmp;
+    size_str += message;
+    return size_str;
+}
