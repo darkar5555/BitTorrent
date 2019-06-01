@@ -7,11 +7,13 @@
 #include <string.h>
 #include <unistd.h>
 #include <iostream>
+#include <map>
 #include "protocol_tracker.h"
 
 using namespace std;
 
-Protocol protocol_track;
+//Protocol protocol_track;
+map<string, string> peers;
 
 int main(void)
 {
@@ -59,23 +61,28 @@ int main(void)
 
     //bzero(buffer,256);
     //n = read(ConnectFD,buffer,255);
-    char *message_buffer;
+    /*char *message_buffer;
     char buffer[4];
     bzero(buffer, 4);
-    int n = read(ConnectFD, buffer, 4);
+    int n = read(ConnectFD, buffer, 4);*/
     do
     {
-      if (n > 0)
+      bzero(buffer,256);
+      n = read(ConnectFD,buffer,255);
+      //cout<<buffer<<endl;
+      savePeers(buffer,peers);
+      printPeers(peers);
+      /*if (n > 0)
       {
         int size_message = atoi(buffer);
         char buffer_op[1];
         //now read operation
         n = read(ConnectFD, buffer_op, 1);
-        cout<<buffer<<endl;
+        
         Messsage msg = protocol_track.read_s(buffer_op[0], size_message, ConnectFD);
       }
       bzero(buffer, 4);
-      n = read(ConnectFD, buffer, 4);
+      n = read(ConnectFD, buffer, 4);*/
       //cout<<buffer<<endl;
       //lee de manera ingenua cada mensaje
       /*bzero(buffer,256);

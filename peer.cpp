@@ -79,10 +79,10 @@ int main(int argc, char **argv)
          //to_ip = encode_message(ip);
          //to_send = ip;
          //to_send += port;
-         to_send += ip;
-         //to_send = encode_message(string("L")+to_ip+to_port);
-         to_send = encode_message(string("L")+to_send);
-         cout<<to_send;
+         to_send +=ip;
+         to_send += " ";
+         to_send += port;
+         
       }
       n= write(SocketFD,to_send.c_str(),to_send.length());
       input_message = "";
