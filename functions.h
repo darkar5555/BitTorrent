@@ -123,7 +123,7 @@ void joinFile(char *chunkName, char *fileOutput) {
 
 }
 
-void create_list_peers()
+/*void create_list_peers()
 {
    ofstream fs("list_peers.txt");
    fs<< "127.0.0.1 file_1.txt" ;
@@ -139,7 +139,7 @@ void print_list_peers()
     {
         cout<<ip<<"->"<<file_chunk<<endl;
     }
-}
+}*/
 
 
 string FirstNumberToString(int n)

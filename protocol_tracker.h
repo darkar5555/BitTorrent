@@ -16,7 +16,7 @@
 using namespace std;
 
 
-void savePeers(string message, map<string ,string> peers)
+void savePeers(string message, map<string ,string>& peers)
 {
     int pos=0;
     string delimiter = " ";
@@ -28,12 +28,13 @@ void savePeers(string message, map<string ,string> peers)
         message.erase(0,pos+delimiter.length());
     }    
     peers.insert({token,message});
+    //return peers;
     //cout<<message<<endl;
 }
 
 void printPeers(map <string,string > peers)
 {
-    for(map<string,string>::iterator it = peers.begin();it!=peers.end();it++)
+    for(auto it = peers.begin(); it != peers.end(); ++it)
     {
         cout<<it->first<< " -> "<<it->second<<endl;
     }
